@@ -1,9 +1,11 @@
 from django.urls import path
-from frontend import views
+from .views import index
+
+app_name = 'frontend'
 
 urlpatterns = [
-    path('', views.index),
-    path('join', views.index),
-    path('create', views.index),
-    path('room/<str:roomCode>', views.index)
+    path('', index, name=''),
+    path('join', index),
+    path('create', index),
+    path('room/<str:roomCode>', index)
 ]
